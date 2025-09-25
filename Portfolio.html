@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+    .navbar {
+      background-color: #343a40;
+    }
+    .navbar a {
+      color: white !important;
+    }
+    .hero {
+      background: linear-gradient(to right, #667eea, #764ba2);
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .section-title {
+      margin: 40px 0 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .portfolio-item img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    .portfolio-item img:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">My Portfolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container">
+      <h1>Hello, I'm <span style="font-weight:bold;">Kryssa</span></h1>
+      <p>Web Developer | Designer | Freelancer</p>
+      <a href="#contact" class="btn btn-light mt-3">Hire Me</a>
+    </div>
+  </section>
+
+  <!-- About Me -->
+  <section id="about" class="container">
+    <h2 class="section-title">About Me</h2>
+    <div class="row align-items-center">
+      <div class="col-md-4 text-center">
+        <img src="C:\Users\kryss\OneDrive\Documents\L&T\Me.jpg" class="rounded-circle img-fluid" alt="Profile">
+      </div>
+      <div class="col-md-8">
+        <p>
+            <br>
+            <br>
+          Hi, I'm <strong>Kryssa</strong>, a passionate web developer with experience in creating
+          modern and responsive websites. I specialize in front-end technologies like HTML, CSS,
+          JavaScript, and frameworks like Bootstrap. My goal is to build visually appealing and
+          user-friendly digital experiences.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Gallery -->
+  <section id="portfolio" class="container">
+    <h2 class="section-title">My Work</h2>
+    <div class="row g-4">
+      <div class="col-md-4 portfolio-item">
+        <img src="C:\Users\kryss\Downloads\Digital Marketing Agency Homepage Layout.png" alt="Hooli-Digital Marketing Agency">
+        <h5 class="mt-2 text-center"><br><b>Hooli-Digital Marketing Agency</b></h5>
+      </div>
+      <div class="col-md-4 portfolio-item">
+        <img src="C:\Users\kryss\Downloads\FinanceApp Homepage Design Layout.png" alt="Project 2">
+        <h5 class="mt-2 text-center"><br><b>FinanceApp</b></h5>
+      </div>
+      <div class="col-md-4 portfolio-item">
+        <img src="C:\Users\kryss\Downloads\Modern Art Gallery Webpage Layout.png" alt="Project 3">
+        <h5 class="mt-2 text-center"><br><b>Art Gallery</b></h5>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+<section id="contact" class="container">
+  <h2 class="section-title">Contact Me</h2>
+  <form id="contactForm" class="row g-3">
+    <div class="col-md-6">
+      <input type="text" class="form-control" placeholder="Your Name" required>
+    </div>
+    <div class="col-md-6">
+      <input 
+        type="email" 
+        id="emailInput" 
+        class="form-control" 
+        placeholder="Your Email" 
+        required>
+    </div>
+    <div class="col-12">
+      <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </div>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+</footer>
+
+<!-- Bootstrap JS + jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JS -->
+<script>
+  // Email validation
+  const emailInput = document.getElementById("emailInput");
+  emailInput.addEventListener("input", function () {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // simple regex
+    if (!emailPattern.test(this.value)) {
+      this.setCustomValidity("Please enter a valid email address.");
+    } else {
+      this.setCustomValidity(""); // reset when valid
+    }
+  });
+
+  // Dummy form submission handling
+  $("#contactForm").submit(function(e) {
+    e.preventDefault();
+    if (this.checkValidity()) {
+      alert("Thank you for contacting me! I will get back to you soon.");
+      this.reset();
+    }
+  });
+</script>
+</body>
+
+</html>

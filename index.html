@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Personal Portfolio - Your Name</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+  <nav class="container">
+    <div><strong>Kryssa</strong></div>
+    <div>
+      <a href="#about">About Me</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<section id="about" class="container">
+  <img src="C:\Users\kryss\OneDrive\Desktop\LnT\Me2.jpg" alt="Your Name" />
+  <div>
+    <h2>About Me</h2>
+    <p>Hello! I'm Kryssa, a passionate developer specializing in web development, design, and software projects. I have a background in computer science and a love for creating clean, efficient, and user-friendly applications.</p>
+    <p>My journey began with learning fundamental programming, and I’ve expanded into full-stack development, working on projects that combine creativity with functionality.</p>
+  </div>
+</section>
+
+<section id="portfolio" class="container">
+  <h2>Portfolio</h2>
+  <div class="projects" id="projectsContainer">
+    <!-- Projects injected by JS -->
+  </div>
+</section>
+
+<section id="contact" class="container">
+  <h2>Contact Me</h2>
+  <form id="contactForm" novalidate>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" />
+    <div class="error-message" id="nameError"></div>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" />
+    <div class="error-message" id="emailError"></div>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5"></textarea>
+    <div class="error-message" id="messageError"></div>
+
+    <button type="submit">Send Message</button>
+  </form>
+  <div id="formMessage"></div>
+</section>
+<div id="projectsContainer"></div>
+<script src="script.js"></script>
+</body>
+</html>
